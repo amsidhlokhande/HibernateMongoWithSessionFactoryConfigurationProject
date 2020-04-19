@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+	    <property name="hibernate.ogm.datastore.provider">mongodb</property>
+		<property name="hibernate.ogm.datastore.host">127.0.0.1:27017</property>
+		<property name="hibernate.ogm.datastore.database">sandbox</property>
+		<property name="hibernate.ogm.datastore.create_database">false</property>
+		<property name="hibernate.ogm.datastore.username">amsidh</property>
+		<property name="hibernate.ogm.datastore.password">password</property>
+		<property name="hibernate.ogm.error_handler">org.hibernate.ogm.compensation.BaseErrorHandler</property>
+        <property name="hibernate.transaction.jta.platform">org.hibernate.engine.transaction.jta.platform.internal.JBossStandAloneJtaPlatform</property>
+        
+        <property name="hibernate.ogm.mongodb.authentication_database">sandbox</property>
+		<property name="hibernate.ogm.mongodb.authentication_mechanism">SCRAM_SHA_1</property>
+		<property name="hibernate.ogm.datastore.document.association_storage">IN_ENTITY</property>
+		<property name="hibernate.ogm.mongodb.association_document_storage">COLLECTION_PER_ASSOCIATION</property>
+		<property name="hibernate.ogm.mongodb.write_concern">ACKNOWLEDGED</property>
+		<property name="hibernate.ogm.mongodb.read_preference">PRIMARY</property>
+
+
+		<property name="hibernate.ogm.mongodb.safe">NORMAL</property>
+		<property name="hibernate.ogm.mongodb.connection_timeout">5000</property>
+		
+		 <mapping class="com.amsidh.mvc.dom.Person"/>
+	</session-factory>
+</hibernate-configuration>
